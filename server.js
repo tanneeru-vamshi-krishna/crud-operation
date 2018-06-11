@@ -82,4 +82,7 @@ router.route('/products/:product_id').put(function (req, res) {
 app.use(cors());
 app.use('/api', router);
 app.listen(port);
+app.get('/', (req, res) => res.send(product))
+
+//app.listen3000, () => console.log('listening on port 3000!'))
 console.log('REST API is runnning at ' + port);
