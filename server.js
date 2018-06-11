@@ -7,7 +7,7 @@ var product = require('./product');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-var port = process.env.PORT || 8000;
+var port = process.env.PORT || 3000;
 var router = express.Router();
 
 mongoose.connect('mongodb://localhost:27017/products');
@@ -82,7 +82,7 @@ router.route('/products/:product_id').put(function (req, res) {
 app.use(cors());
 app.use('/api', router);
 app.listen(port);
-app.get('/', (req, res) => res.send(product))
+//app.get('/', (req, res) => res.send("hello world"))
 
 //app.listen3000, () => console.log('listening on port 3000!'))
 console.log('REST API is runnning at ' + port);
